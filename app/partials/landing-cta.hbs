@@ -1,0 +1,37 @@
+<section class="py-6 bg-gray-100 text-gray-900">
+  <div
+    class="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48"
+  >
+    <h1 class="text-5xl font-bold leading-none text-center">
+      What are you waiting for?
+    </h1>
+    <p class="text-xl font-medium text-center">
+      Never miss a zoom call ever again
+    </p>
+    <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
+      {{#if currentUser}}
+        <div
+          class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
+        >
+          <a
+            href="/{{currentUser.details.username}}"
+            class="px-8 py-3 text-lg font-semibold rounded bg-blue-600 text-gray-50"
+          >
+            Go to your dashboard
+          </a>
+        </div>
+      {{else}}
+        <div
+          class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
+        >
+          <a
+            href="/user/signup"
+            class="px-8 py-3 text-lg font-semibold rounded bg-blue-600 text-gray-50"
+          >
+            Sign up now!
+          </a>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</section>

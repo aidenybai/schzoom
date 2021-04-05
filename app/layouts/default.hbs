@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your App</title>
+  <title>Schzoom</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/_remake.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-  {{#if currentUser}}
+  {{!-- {{#if currentUser}}
     <a href="/user/logout">Logout</a>
   {{else}}
     <a class="nav__button" href="/user/signup">Sign up</a>
     &nbsp;
     <a class="nav__button" href="/user/login">Log in</a>
-  {{/if}}
+  {{/if}} --}}
   {{!-- Show errors --}}
   {{#if flashErrors }}
     {{#each flashErrors }}
