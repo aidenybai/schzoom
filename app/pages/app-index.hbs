@@ -1,4 +1,26 @@
-<h1>Welcome to the app!</h1>
-<div>[[ Dynamic Remake code goes here]]</div>
-<br><br>
-<a href="https://docs.remaketheweb.com/a-simple-example-app/">Try a simple todo app</a>
+<!--temp no styles-->
+
+<div array key="classes">
+  <button new:class>
+    Add class
+  </button>
+  <div sortable>
+    {{#for class in classes}}
+      <li object key:name="@search" key:url="@search" key:note="@search">
+        <div>
+          <a target:url="@href" href="#" target="_blank">
+            <span target:name="@innerText">
+              {{class.name}}
+            </span>
+            <span target:note="@innerText">
+              {{class.note}}
+            </span>
+          </a>
+        </div>
+        <button edit:name edit:note edit:url>
+          Edit
+        </button>
+      </li>
+    {{/for}}
+  </div>
+</div>
