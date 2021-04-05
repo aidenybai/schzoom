@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your App</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/_remake.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+<body>
+  {{#if currentUser}}
+    <a href="/user/logout">Logout</a>
+  {{else}}
+    <a class="nav__button" href="/user/signup">Sign up</a>
+    &nbsp;
+    <a class="nav__button" href="/user/login">Log in</a>
+  {{/if}}
+  {{!-- Show errors --}}
+  {{#if flashErrors }}
+    {{#each flashErrors }}
+      <div>{{ this }}</div>
+    {{/each}}
+  {{/if}}
+  {{!-- Show success messages --}}
+  {{#if flashSuccesses }}
+    {{#each flashSuccesses }}
+      <div>{{ this }}</div>
+    {{/each}}
+  {{/if}}
+  {{> yield }}
+  {{#if isPageAuthor}}
+    {{!-- Prevent loading the Remake framework if the page isn't editable --}}
+    <script src="/assets/js/vendor/Sortable.min.js"></script>
+    <script src="/assets/js/vendor/crostini.min.js"></script>
+    <script src="/remake/js/remake.min.js"></script>
+    <script src="/assets/js/remake-init.js"></script>
+  {{/if}}
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
