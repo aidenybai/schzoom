@@ -1,7 +1,76 @@
-<form action="/user/signup" method="post">
-  <h1>Sign up</h1>
-  <input type="text" name="username" placeholder="Username" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="password" name="password" placeholder="Password" required>
-  <button type="submit">Sign up</button>
-</form>
+<div class="mt-5 w-100">
+  <div
+    class="flex mx-auto flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800"
+  >
+    <div class="mb-8 text-center">
+      <h1 class="my-3 text-4xl font-bold">
+        Sign up
+      </h1>
+      <p class="text-sm text-gray-600">
+        Sign up to create your account
+      </p>
+    </div>
+    <form
+      action="/user/signup"
+      method="post"
+      class="space-y-12 ng-untouched ng-pristine ng-valid"
+    >
+      <div class="space-y-4">
+        <div>
+          <label for="email" class="block mb-2 text-sm">
+            Username
+          </label>
+          <input
+            type="text"
+            name="username"
+            placeholder="John Doe"
+            class="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
+          />
+        </div>
+        <div>
+          <label for="email" class="block mb-2 text-sm">
+            Email address
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="foo@bar.com"
+            class="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
+          />
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <label for="password" class="text-sm">
+              Password
+            </label>
+          </div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="*****"
+            class="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
+          />
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div>
+          <button
+            type="submit"
+            class="w-full px-8 py-3 rounded-md bg-blue-600 text-gray-50"
+          >
+            Sign up
+          </button>
+        </div>
+        <p class="px-6 text-sm text-center text-gray-600">
+          Have an account already?
+          <a href="/user/login" class="hover:underline text-blue-600">
+            Log in
+          </a>
+
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
