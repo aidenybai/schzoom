@@ -1,26 +1,48 @@
 <!--temp no styles-->
-
-<div array key="classes">
-  <button new:class>
-    Add class
+<div class="px-64 py-5">
+  <button
+    class="px-8 py-3 mb-5 font-semibold rounded bg-gray-800 text-gray-100"
+    new:class
+  >
+    Add Class
   </button>
-  <div sortable>
+  <ul
+    class="border border-gray-200 rounded-md divide-y divide-gray-200"
+    array
+    key="classes"
+    sortable
+  >
     {{#for class in classes}}
-      <li object key:name="@search" key:url="@search" key:note="@search">
-        <div>
-          <a target:url="@href" href="#" target="_blank">
-            <span target:name="@innerText">
-              {{class.name}}
-            </span>
-            <span target:note="@innerText">
-              {{class.note}}
-            </span>
+      <li
+        class="pl-3 pr-4 py-3 flex items-center justify-between text-sm"
+        object
+        key:name="@search"
+        key:url="@search"
+        key:note="@search"
+      >
+        <div class="w-0 flex-1 flex items-center">
+          <span class="ml-2 flex-1 w-0 truncate">
+            <a target:url="@href" href="#" target="_blank">
+              <span target:name="@innerText">
+                {{class.name}}
+              </span> -
+              <span target:note="@innerText">
+                {{class.note}}
+              </span>
+            </a>
+          </span>
+        </div>
+        <div class="ml-4 flex-shrink-0">
+          <a
+            edit:name
+            edit:note
+            edit:url
+            class="font-medium text-indigo-600 hover:text-indigo-500"
+          >
+            Edit
           </a>
         </div>
-        <button edit:name edit:note edit:url>
-          Edit
-        </button>
       </li>
     {{/for}}
-  </div>
+  </ul>
 </div>
