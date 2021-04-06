@@ -1,7 +1,14 @@
 <!--temp no styles-->
 <div class="px-64 py-5">
+  <h1 class="text-3xl font-bold">
+    Zoom Dashboard
+  </h1>
+  <p class="my-5">
+    Create classes, edit them to add information, and drag to resort them.
+  </p>
+  <hr />
   <button
-    class="px-8 py-3 mb-5 font-semibold rounded bg-gray-800 text-gray-100"
+    class="mt-5 px-8 py-3 mb-5 font-semibold rounded bg-gray-800 text-gray-100"
     new:class
   >
     Add Class
@@ -14,7 +21,7 @@
   >
     {{#for class in classes}}
       <li
-        class="pl-3 pr-4 py-3 flex items-center justify-between text-sm"
+        class="pl-3 pr-4 py-3 flex items-center justify-between text-lg"
         object
         key:name="@search"
         key:url="@search"
@@ -22,22 +29,30 @@
       >
         <div class="w-0 flex-1 flex items-center">
           <span class="ml-2 flex-1 w-0 truncate">
-            <a target:url="@href" href="#" target="_blank">
-              <span target:name="@innerText">
-                {{class.name}}
-              </span> -
-              <span target:note="@innerText">
-                {{class.note}}
-              </span>
-            </a>
+            <span target:name="@innerText">
+              {{class.name}}
+            </span>
+            -
+            <span target:note="@innerText">
+              {{class.note}}
+            </span>
           </span>
         </div>
         <div class="ml-4 flex-shrink-0">
           <a
+            target:url="@href"
+            href="#"
+            target="_blank"
+            class="font-medium text-blue-600 hover:text-blue-500"
+          >
+            Zoom
+          </a>
+          |
+          <a
             edit:name
             edit:note
             edit:url
-            class="font-medium text-indigo-600 hover:text-indigo-500"
+            class="font-medium text-blue-600 hover:text-blue-500"
           >
             Edit
           </a>
